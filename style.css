@@ -1,0 +1,245 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  background: #0f0f0f;
+  color: #f2c1cc;
+  overflow-x: hidden;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Screens */
+.screen {
+  height: 100svh;
+  width: 100%;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.9s ease;
+  padding: env(safe-area-inset-top) 16px env(safe-area-inset-bottom);
+}
+
+.screen.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* Content */
+.content {
+  text-align: center;
+  width: 100%;
+  max-width: 420px;
+  padding: 10px;
+}
+
+/* Text */
+h1 {
+  font-size: clamp(2.2rem, 7vw, 3rem);
+  margin-bottom: 14px;
+  color: #f4a6b8;
+}
+
+.name {
+  display: inline-block;
+  animation: glow 2s ease-in-out infinite;
+}
+
+.birthday-title {
+  animation: slideText 1s ease forwards;
+}
+
+p {
+  font-size: clamp(1rem, 4vw, 1.1rem);
+  line-height: 1.65;
+  color: #f2c1cc;
+}
+
+/* Button */
+button {
+  margin-top: 32px;
+  padding: 16px 36px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 40px;
+  background: #f4a6b8;
+  color: #0f0f0f;
+  cursor: pointer;
+  transition: transform 0.35s ease, opacity 0.35s ease;
+}
+
+button:active {
+  transform: scale(0.96);
+}
+
+/* Button reveal */
+.hidden-btn {
+  opacity: 0;
+  transform: translateY(18px);
+}
+
+.hidden-btn.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Animations */
+.fade-in {
+  animation: fadeIn 1.3s ease forwards;
+}
+
+.slide-up {
+  animation: slideUp 1s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(32px);
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes glow {
+  0% {
+    text-shadow: 0 0 6px #f4a6b8;
+  }
+  50% {
+    text-shadow: 0 0 18px #f4a6b8;
+  }
+  100% {
+    text-shadow: 0 0 6px #f4a6b8;
+  }
+}
+
+@keyframes slideText {
+  from {
+    letter-spacing: 8px;
+    opacity: 0;
+  }
+  to {
+    letter-spacing: 2px;
+    opacity: 1;
+  }
+}
+
+/* Carousel */
+.carousel {
+  position: relative;
+  width: min(75vw, 260px);
+  height: min(75vw, 260px);
+  margin: 28px auto;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid #f4a6b8;
+}
+
+.carousel-img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.9s ease;
+  margin-left: -50%;
+}
+
+.carousel-img.active {
+  opacity: 1;
+}
+
+/* Video container */
+.video-container {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: 24px 0;
+}
+
+.video-box {
+  width: min(48%, 180px);
+  aspect-ratio: 16/9;
+  border-radius: 16px;
+  border: 2px solid #f4a6b8;
+  object-fit: cover;
+}
+
+/* Final surprise message */
+.final-message {
+  margin-top: 18px;
+  opacity: 0;
+  transform: translateY(15px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+/* Show final message */
+.final-message.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Signature */
+.signature {
+  margin-top: 18px;
+  font-size: 0.9rem;
+  color: #e6a0b0;
+}
+
+/* Desktop enhancement only */
+@media (min-width: 768px) {
+  .content {
+    max-width: 500px;
+  }
+
+  .carousel {
+    width: 280px;
+    height: 280px;
+  }
+
+  .video-box {
+    width: 140px;
+  }
+}
+
+/* Celebration emoji animation */
+.emoji {
+  position: absolute;
+  font-size: clamp(24px, 6vw, 48px);
+  animation: floatEmoji 2s ease forwards;
+  pointer-events: none;
+  user-select: none;
+  z-index: 999;
+}
+
+@keyframes floatEmoji {
+  0% {
+    opacity: 1;
+    transform: translateY(0) rotate(0deg) scale(1);
+  }
+  50% {
+    transform: translateY(-80px) rotate(45deg) scale(1.2);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-150px) rotate(90deg) scale(0.8);
+  }
+}

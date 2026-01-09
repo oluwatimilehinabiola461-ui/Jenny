@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy Birthday Jenny</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Background Music -->
+  <audio id="bgMusic" src="/assets/happy-birthday-155461.mp3" loop></audio>
+
+  <!-- First Screen -->
+  <section class="screen screen-one active">
+    <div class="content fade-in">
+      <h1>Hey <span class="name">Jenny</span></h1>
+      <p>Someone special deserves something special today.</p>
+
+      <button id="revealBtn" class="hidden-btn">
+        Tap to continue
+      </button>
+    </div>
+  </section>
+
+  <!-- Second Screen -->
+  <section class="screen screen-two">
+    <div class="content slide-up">
+      <h1 class="birthday-title">Happy Birthday 🎉</h1>
+
+      <p class="message">
+        Today is about you. Your strength, your kindness, your presence.
+        I hope this year treats you gently and surprises you beautifully.
+      </p>
+
+      <!-- IMAGE CAROUSEL -->
+      <div class="carousel">
+        <img src="/assets/photo_2026-01-08_20-33-13.jpg" class="carousel-img active" alt="">
+        <img src="/assets/photo_2026-01-08_20-33-16.jpg" class="carousel-img" alt="">
+        <img src="/assets/photo_2026-01-08_20-33-20.jpg" class="carousel-img" alt="">
+        <img src="/assets/photo_2026-01-08_20-33-21.jpg" class="carousel-img" alt="">
+        <img src="/assets/photo_2026-01-08_20-33-22 (2).jpg" class="carousel-img" alt="">
+        <img src="/assets/photo_2026-01-08_20-33-24.jpg" class="carousel-img" alt="">
+      </div>
+
+      <!-- VIDEO BOXES -->
+      <div class="video-container">
+        <video class="video-box" src="/assets/video_2026-01-08_20-36-13.mp4" autoplay loop muted playsinline></video>
+        <video class="video-box" src="/assets/video_2026-01-08_20-37-16.mp4" autoplay loop muted playsinline></video>
+      </div>
+
+      <!-- FINAL SURPRISE MESSAGE -->
+      <p id="finalMessage" class="final-message">Jenny, you are amazing in ways words can’t capture. Your laughter, your heart, and your energy make life brighter just by you being you. I hope you love this little surprise!</p>
+
+      <p class="signature">With love 🤍</p>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
