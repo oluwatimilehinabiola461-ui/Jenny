@@ -227,7 +227,7 @@ button:active {
   animation: floatEmoji 2s ease forwards;
   pointer-events: none;
   user-select: none;
-  z-index: 999;
+  z-index: 990;
 }
 
 @keyframes floatEmoji {
